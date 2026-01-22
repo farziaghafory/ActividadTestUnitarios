@@ -23,7 +23,7 @@ class FacturaServiceTest {
     @DisplayName("totalConIva usando mock") //nombre humano en el reporte.
     void testTotalConIva() {
         FacturaService service = new FacturaService(calc);
-        when(calc.sumar(100, 21)).thenReturn(121);
+        when(calc.sumar(eq(100), anyInt())).thenReturn(121); // can do anyinput() intstead of 21 to put anything but still return 121
         when(calc.sumar(0, 21)).thenReturn(21);// the bonus
 
         int res1 = service.totalConIva(100);
