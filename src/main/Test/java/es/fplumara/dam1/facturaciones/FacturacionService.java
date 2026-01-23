@@ -24,7 +24,7 @@ class FacturaServiceTest {
     void testTotalConIva() {
         FacturaService service = new FacturaService(calc);
         when(calc.sumar(eq(100), anyInt())).thenReturn(121); // can do anyinput() intstead of 21 to put anything but still return 121
-        when(calc.sumar(0, 21)).thenReturn(21);// the bonus
+       /* when(calc.sumar(0, 21)).thenReturn(21);// the bonus*/
 
         int res1 = service.totalConIva(100);
         int res2 = service.totalConIva(0);
